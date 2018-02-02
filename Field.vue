@@ -26,7 +26,12 @@
         :value="componentValue"
         @change="changeValue"
       >
-      <textarea v-else-if="fieldType === 'textarea'" class="form-control">
+      <textarea
+        v-else-if="fieldType === 'textarea'"
+        :class="{ 'form-control': true, 'input-sm': true,
+        changed: changedValue }"
+        @change="changeValue"
+        >
         {{ componentValue }}
       </textarea>
 
